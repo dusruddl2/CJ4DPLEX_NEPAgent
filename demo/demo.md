@@ -34,6 +34,10 @@ PYTHONPATH=. python demo/app.py --share    # 외부에서 접속할 임시 주�
 
 ![요약 그림](output.png)
 
+같은 영상의 실행 과정을 한 장으로 정리한 그림입니다(테스트 케이스 (a)의 기록).
+
+![실행 과정 그림](figure.png)
+
 | 단계 | 출력 |
 |---|---|
 | 1. 초기 예측 | "The baby, having climbed over the back of the couch, is seen sitting on the floor and looking up, ..." (아기가 소파 등받이를 넘어가 바닥에 앉아 있음) |
