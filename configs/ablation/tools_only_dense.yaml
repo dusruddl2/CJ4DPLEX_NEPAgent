@@ -1,0 +1,4 @@
+inherit: ../nep_agent_all_candidates.yaml
+# Tool-menu ablation: the final settings with a single tool on the menu; every candidate stored.
+# Run on the items below the threshold only (the *_rt question files).
+tool_menu: dense_resample

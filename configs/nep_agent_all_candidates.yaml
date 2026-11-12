@@ -1,0 +1,12 @@
+inherit: base.yaml
+# The final model's settings with every candidate computed and stored for every item (first prediction, clip-only reasoning,
+# tool + reasoning); the first prediction is reported. Policies are applied offline to the stored candidates
+# (scripts/main_table.py --block policy). Applying the threshold (τ = 0.75) gives exactly what configs/nep_agent.yaml reports.
+store_all_candidates: true
+reasoning_variants: causal_sft_nc,tool_reason
+final_answer: direct
+lora_path: checkpoints/nep_agent_lora
+reason_audio: none
+tool_menu: dense_resample,zoom,terminal_state
+audio_tags: false  # speech transcript only, as in the final configuration
+zoom_mode: grounded

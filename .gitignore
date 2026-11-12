@@ -1,0 +1,11 @@
+/checkpoints/*
+!/checkpoints/checkpoints.md
+/cache/
+/data/
+/logs/
+__pycache__/
+*.pyc
+.env
+.pytest_cache/
+/tmp/
+.omc/

@@ -1,0 +1,8 @@
+$preamble
+The clip stops before the event asked about happens. Describe, in one sentence, what most likely happens next.
+
+$audio
+
+$question_block
+
+Answer with that one sentence only. Do not list alternatives.

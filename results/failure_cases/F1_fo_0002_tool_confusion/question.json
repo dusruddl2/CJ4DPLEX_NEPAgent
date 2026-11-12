@@ -1,0 +1,40 @@
+{
+ "sample_id": "fo_0002",
+ "benchmark": "FutureOmni (Speech)",
+ "type": "Causal",
+ "task": null,
+ "observed_seconds": 124.0,
+ "question_given_to_model": "Given the premise event: 'The officer asks the man to sing the nursery rhyme he just started', what event is its most direct conclusion? Describe that event in one sentence.",
+ "question_ko": "전제 '경찰이 남자에게 방금 시작한 동요를 불러 보라고 한다'의 가장 직접적인 결과는?",
+ "benchmark_question": "Given the premise event: 'The officer asks the man to sing the nursery rhyme he just started', which event is its most direct conclusion?",
+ "options_used_only_for_scoring": [
+  {
+   "option": "A",
+   "text": "The man refuses to sing and starts arguing with the officer",
+   "text_ko": "남자가 노래를 거부하고 경찰과 언쟁함"
+  },
+  {
+   "option": "B",
+   "text": "The man successfully completes the song and is praised by the officer",
+   "text_ko": "남자가 노래를 끝까지 부르고 경찰에게 칭찬받음"
+  },
+  {
+   "option": "C",
+   "text": "The other men join in to help the man finish the song",
+   "text_ko": "다른 남자들이 함께 불러 노래를 마치도록 도움"
+  },
+  {
+   "option": "D",
+   "text": "The officer puts down the stick and begins clapping along",
+   "text_ko": "경찰이 막대를 내려놓고 손뼉을 치며 따라 부름"
+  },
+  {
+   "option": "E",
+   "text": "The officer hits the man with the stick",
+   "text_ko": "경찰이 막대로 남자를 때림"
+  }
+ ],
+ "correct_option": "E",
+ "published_annotation": null,
+ "future_video": null
+}

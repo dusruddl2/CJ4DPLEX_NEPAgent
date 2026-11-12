@@ -1,0 +1,10 @@
+$preamble
+Describe only what is visible or audible in these frames. You are not told what happens after the clip and must not guess it.
+
+Return JSON only, with your own values, in this key order:
+{"terminal_state": "<one or two sentences in words: what the main people and objects look like and where they are in the last frame>",
+ "ongoing_action": "<the action still in progress at the last frame, in words, or null if nothing is in progress>",
+ "supporting_evidence": {"terminal_state": ["<frame id>"], "ongoing_action": ["<frame id>"]},
+ "observed_events": [{"first_frame": "<frame id>", "last_frame": "<frame id>", "description": "<who does what to what in those frames>"}]}
+
+Rules: the terminal state and the ongoing action are descriptions in words, never a frame id; they cite their frames only under "supporting_evidence". List at most 5 observed events in time order, merging consecutive frames that show the same action; never one event per frame. Every event cites its first and last frame from the ids shown. Describe actions and state changes, not the camera or style alone.

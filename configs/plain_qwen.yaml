@@ -1,0 +1,8 @@
+inherit: base.yaml
+# Baseline: base Qwen3-VL-8B sentence on 32 frames, no frame labels, no audio text; same Direct prompt and matcher.
+use_vp: false
+use_audio: false
+use_reflector: false
+gate_tau: 0.7
+reasoning_variants: ""
+final_answer: direct

@@ -1,0 +1,13 @@
+$preamble
+Observed facts about the clip (fixed; you may not add, remove or change any of them):
+$observed
+
+After the clip, this event actually happens next:
+"$gold"
+
+Infer only what happens AFTER the last frame and leads to that event. Do not describe anything in the clip, do not cite frames, and do not add facts about the past.
+
+Return JSON only, with your own values:
+{"intermediate_states": ["<hypothesized state after the clip, in order; at most 3>"],
+ "causal_transition": "<how the terminal state changes into the next event>",
+ "predicted_event": "<the next event in one sentence>"}

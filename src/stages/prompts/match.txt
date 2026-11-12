@@ -1,0 +1,6 @@
+A model watched the beginning of a video and predicted what happens next:
+"$prediction"
+
+$question_block
+
+Which option says the same thing as the prediction, or comes closest to it? Respond with only the letter.

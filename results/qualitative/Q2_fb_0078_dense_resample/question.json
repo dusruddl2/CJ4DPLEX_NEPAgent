@@ -1,0 +1,46 @@
+{
+ "sample_id": "fb_0078",
+ "benchmark": "FutureBench",
+ "type": "hop1",
+ "task": "extrapolation",
+ "observed_seconds": 28.0,
+ "question_given_to_model": "Based on the given video, predict future events and fill in the potential events in the following future gap: 1. [?] 2. The video concludes with a close-up of the blue 'Fazzio' motorbike highlighting its design, label, and plastic seat cover, with a white car and greenery in the background. what event best fits the missing slot in the progression from the observed events (up to the man pushing the motorbike along the road) to the final close-up? Describe the event for the first [?] slot in one sentence.",
+ "question_ko": "남자가 스쿠터를 미는 장면과 마지막 스쿠터 클로즈업 사이에 올 장면([?])을 예측",
+ "benchmark_question": "Based on the given video, predict future events and fill in the potential events in the following future gap: 1. [?] 2. The video concludes with a close-up of the blue 'Fazzio' motorbike highlighting its design, label, and plastic seat cover, with a white car and greenery in the background. Which event best fits the missing slot in the progression from the observed events (up to the man pushing the motorbike along the road) to the final close-up?",
+ "options_used_only_for_scoring": [
+  {
+   "option": "A",
+   "text": "The man in the brown patterned shirt hands over the blue motorbike to a salesperson at a busy roadside stand.",
+   "text_ko": "무늬 셔츠의 남자가 길가 가판대의 판매원에게 오토바이를 넘김"
+  },
+  {
+   "option": "B",
+   "text": "A mechanic in a service workshop inspects the blue motorbike outdoors while a technician explains maintenance details.",
+   "text_ko": "정비소에서 정비사가 오토바이를 점검하고 설명함"
+  },
+  {
+   "option": "C",
+   "text": "A woman in a blue uniform appears inside a stylish showroom, explaining the features and history of various motorbikes to an audience.",
+   "text_ko": "파란 유니폼의 여성이 전시장에서 오토바이의 특징과 역사를 설명함"
+  },
+  {
+   "option": "D",
+   "text": "The child, still next to the blue motorbike, begins a playful race down the road with friends while the motorbike is parked.",
+   "text_ko": "아이가 친구들과 길에서 달리기 놀이를 함"
+  }
+ ],
+ "correct_option": "C",
+ "published_annotation": {
+  "id": "gys9g3MlyGM",
+  "source": "youtube",
+  "published_answer": "B",
+  "published_letter_of_each_option": {
+   "A": "D",
+   "B": "A",
+   "C": "B",
+   "D": "C"
+  },
+  "note": "question and option texts are the published ones; this repo shuffles the option letters per item (src/data/futureomni.py)"
+ },
+ "future_video": "future_video.mp4 (after the observed clip; never given to the model)"
+}

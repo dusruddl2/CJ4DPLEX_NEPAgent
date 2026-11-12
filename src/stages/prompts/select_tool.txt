@@ -1,0 +1,15 @@
+$preamble
+The clip stops before the event asked about happens, so that event cannot be seen. A first pass predicted that next: "$direct_event"
+
+Decide whether one targeted re-examination of the clip could reveal a concrete detail that would confirm or change that prediction. Not knowing how the future will turn out is NOT a reason to re-examine: set "observable_gap" to true only when something inside the clip was missed or unclear (fast motion, a small object, whether the last action finished, a spoken line).
+
+$audio
+
+$question_block
+
+Return JSON only, with your own values. Name the single most useful tool and window even when "observable_gap" is false:
+{"observable_gap": true, "tool": "<tool name>", "where": ["<first frame id>", "<last frame id>"], "cue": "<what to look at in that window, named concretely>", "region": "center", "reason": "<one sentence>", "expected_evidence": "<the specific fact this could settle>"}
+
+Rules: "where" covers at most 8 consecutive frames using the ids shown ($first_id to $last_id); the whole clip is never a valid window. Tools:
+$menu
+"region" matters only for zoom: center, top-left, top-right, bottom-left or bottom-right.

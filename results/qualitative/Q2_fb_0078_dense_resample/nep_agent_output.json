@@ -1,0 +1,55 @@
+{
+ "sample_id": "fb_0078",
+ "run": "resampling-only menu run of the final model (in the final test run the model selected the last-state tool for this item)",
+ "initial_prediction": {
+  "sentence": "The man pushes the blue scooter along the street, moving it from the truck bed towards the house, with the child watching him.",
+  "matched_option": "A",
+  "confidence": 0.657
+ },
+ "gate": "confidence < 0.75: tool and causal reasoning",
+ "tool": {
+  "name": "dense_resample",
+  "name_ko": "구간 재샘플링",
+  "range": [
+   "#27",
+   "#32"
+  ],
+  "cue": "the woman in the yellow outfit and the woman in the blue Yamaha uniform, both speaking and gesturing",
+  "status": "executed",
+  "new_evidence": [
+   "#27.1",
+   "#28.1",
+   "#29.1",
+   "#30.1",
+   "#31.1"
+  ]
+ },
+ "causal_reasoning_after_tool": {
+  "terminal_state": "A man in a patterned shirt is pushing a blue scooter with a plastic cover on its seat along a paved road, with a child in a white shirt and red shorts watching from behind. A white car is parked nearby, and a house is in the background.",
+  "ongoing_action": "A man is pushing a blue scooter along a road while a child watches.",
+  "supporting_evidence": [
+   "#27",
+   "#27.1"
+  ],
+  "intermediate_states": [
+   "The man continues to push the scooter along the road, moving it closer to the house.",
+   "The child walks alongside the man, observing the scooter being moved.",
+   "The man stops the scooter near the house, preparing to unload it."
+  ],
+  "causal_transition": "The man's action of pushing the scooter towards the house directly leads to the scooter being positioned for unloading and the subsequent close-up shot.",
+  "predicted_event": "The video then shows a close-up of the blue 'Fazzio' motorbike, highlighting its design, label, and plastic seat cover, with a white car and greenery in the background. The scene transitions to a woman in a blue uniform with 'Yamaha' and 'Surya Inti Putra' logos, standing in a showroom with motorcycles in the background. She speaks to the camera, likely providing information or a testimonial about the motorbike. The video concludes with a close-up of the blue 'Fazzio' motorbike, emphasizing its design and features, with the white car and greenery still visible in the background."
+ },
+ "final_answer": {
+  "source": "tool_reasoning",
+  "sentence": "The video then shows a close-up of the blue 'Fazzio' motorbike, highlighting its design, label, and plastic seat cover, with a white car and greenery in the background. The scene transitions to a woman in a blue uniform with 'Yamaha' and 'Surya Inti Putra' logos, standing in a showroom with motorcycles in the background. She speaks to the camera, likely providing information or a testimonial about the motorbike. The video concludes with a close-up of the blue 'Fazzio' motorbike, emphasizing its design and features, with the white car and greenery still visible in the background.",
+  "matched_option": "C",
+  "option_text": "A woman in a blue uniform appears inside a stylish showroom, explaining the features and history of various motorbikes to an audience.",
+  "correct": true
+ },
+ "plain_qwen": {
+  "sentence": "The man carefully guides the blue 'Fazzio' scooter off the truck bed and onto the street, preparing it for its first ride.",
+  "matched_option": "B",
+  "correct": false
+ },
+ "note_ko": "초기 예측은 지금 보이는 장면(스쿠터를 미는 남자)을 그대로 서술해 오답(A). 끝 구간을 촘촘히 다시 본 뒤 '파란 유니폼의 여성이 전시장에서 설명함'을 예측해 정답(C)으로 바뀜."
+}

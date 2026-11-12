@@ -1,0 +1,51 @@
+# NEPAgent (submitted model): LoRA SFT on the reasoning set whose inputs include tool evidence and whose targets are the
+# unchanged Teacher targets (src/train/build_sft_tool_inputs.py). LoRA settings and budget:
+# (lr 1e-5, cosine, warmup 0.1, effective batch 16, rank 64, vision tower frozen, 1,500 items, 3 epochs, 1 GPU).
+### model
+model_name_or_path: Qwen/Qwen3-VL-8B-Instruct  # src/train/run_sft.sh overrides this with $VLM_PATH
+image_max_pixels: 200704  # 448 * 448, same cap as VLLMQwen
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_rank: 64
+lora_alpha: 128
+lora_dropout: 0.05
+# Language-model attention and MLP projections only; these names do not exist in the vision encoder.
+lora_target: q_proj,k_proj,v_proj,o_proj,gate_proj,up_proj,down_proj
+freeze_vision_tower: true
+disable_gradient_checkpointing: false
+
+### dataset
+dataset: reasoning_sft
+dataset_dir: cache/sft/reasoning_sft_tool_inputs
+template: qwen3_vl_nothink
+cutoff_len: 32768  # paper value; 32 frames + a ~600-token caption target fit easily
+preprocessing_num_workers: 8
+val_size: 0.02
+
+### output
+output_dir: checkpoints/nep_agent_lora
+overwrite_output_dir: true
+logging_steps: 10
+save_strategy: "steps"  # periodic adapter saves so a time cap does not lose the run
+save_steps: 46
+save_total_limit: 2
+report_to: none
+
+### train
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 16  # 1 GPU x 1 x 16 = 16
+learning_rate: 1.0e-5
+num_train_epochs: 3.0  # same as the answer-only SFT (paper value)
+lr_scheduler_type: cosine
+warmup_ratio: 0.1  # paper
+bf16: true
+seed: 42
+dataloader_num_workers: 4
+ddp_timeout: 180000000
+
+### eval
+eval_strategy: epoch
+per_device_eval_batch_size: 1

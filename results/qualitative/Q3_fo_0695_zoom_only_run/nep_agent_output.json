@@ -1,0 +1,51 @@
+{
+ "sample_id": "fo_0695",
+ "run": "zoom-only menu run of the final model (the final model did not select zoom on test)",
+ "initial_prediction": {
+  "sentence": "The Minion fires the bazooka, launching a large, red, cartoonish projectile that explodes in a massive, fiery blast, sending the car and its occupants flying backward through the air.",
+  "matched_option": "B",
+  "confidence": 0.725
+ },
+ "gate": "confidence < 0.75: tool and causal reasoning",
+ "tool": {
+  "name": "zoom",
+  "name_ko": "영역 확대 (물체 탐지)",
+  "range": [
+   "#31",
+   "#32"
+  ],
+  "cue": "a Minion's foot pressing a pedal in frame #31, and the Minion holding a bazooka in frame #32",
+  "status": "executed",
+  "new_evidence": [
+   "#31z",
+   "#32z"
+  ]
+ },
+ "causal_reasoning_after_tool": {
+  "terminal_state": "A Minion is smiling broadly while holding a large green bazooka, with another Minion and a child visible nearby in the car.",
+  "ongoing_action": null,
+  "supporting_evidence": [
+   "#32"
+  ],
+  "intermediate_states": [
+   "The Minion with the bazooka fires it, causing a large explosion.",
+   "The car is thrown off course by the blast.",
+   "The family inside the car is jolted and startled by the sudden force."
+  ],
+  "causal_transition": "The firing of the bazooka creates a powerful explosion that violently impacts the vehicle, altering its trajectory and startling its occupants.",
+  "predicted_event": "The car is thrown off course by the blast, and the family inside is jolted and startled by the sudden force."
+ },
+ "final_answer": {
+  "source": "tool_reasoning",
+  "sentence": "The car is thrown off course by the blast, and the family inside is jolted and startled by the sudden force.",
+  "matched_option": "B",
+  "option_text": "The Minion fires the bazooka, causing the car to swerve.",
+  "correct": true
+ },
+ "plain_qwen": {
+  "sentence": "The Minion fires the bazooka, launching a projectile that causes a large explosion and chaos inside the car.",
+  "matched_option": "B",
+  "correct": true
+ },
+ "note_ko": "초기 예측은 확신도 0.73으로 기준 미달. 마지막 두 프레임을 확대해 바주카포를 든 미니언을 확인한 뒤, '차가 공중으로 날아감' 대신 정답과 같은 '차가 진로를 벗어나 흔들림'으로 예측이 구체화됨."
+}

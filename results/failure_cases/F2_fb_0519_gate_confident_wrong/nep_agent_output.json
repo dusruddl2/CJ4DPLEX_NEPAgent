@@ -1,0 +1,25 @@
+{
+ "sample_id": "fb_0519",
+ "run": "final test run",
+ "initial_prediction": {
+  "sentence": "A hand enters the frame and begins to gently stroke the cat's side, which remains asleep and undisturbed on the keyboard.",
+  "matched_option": "A",
+  "confidence": 0.847
+ },
+ "gate": "confidence >= 0.75: initial prediction is final",
+ "tool": null,
+ "causal_reasoning_after_tool": null,
+ "final_answer": {
+  "source": "initial_prediction",
+  "sentence": "A hand enters the frame and begins to gently stroke the cat's side, which remains asleep and undisturbed on the keyboard.",
+  "matched_option": "A",
+  "option_text": "The cat, still in deep sleep, begins to twitch in its sleep while no significant workspace item details emerge.",
+  "correct": false
+ },
+ "plain_qwen": {
+  "sentence": "A hand gently strokes the sleeping cat's side, causing it to slightly shift its position while remaining peacefully asleep on the keyboard.",
+  "matched_option": "A",
+  "correct": false
+ },
+ "note_ko": "확신도 0.847로 추가 단계 없이 끝났으나 오답(A). 마지막 장면을 그대로 이어 쓴 '변화 없음' 예측이 높은 확신도를 받음. 정답은 고양이가 깨어나는 변화(C)."
+}

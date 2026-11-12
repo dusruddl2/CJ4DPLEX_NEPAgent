@@ -1,0 +1,15 @@
+$preamble
+The clip stops before the event asked about happens. Your earlier reasoning about the clip was:
+$previous
+$extra
+
+$audio
+
+$question_block
+
+Update the reasoning with the additional observations only where they change it, then predict what happens next.
+
+Return JSON only, with your own values:
+$schema
+
+Rules: cite only frame or image ids shown; "supporting_evidence" must list the ids that the prediction relies on, including any additional observation it uses; "predicted_event" is one sentence about what happens after the clip.

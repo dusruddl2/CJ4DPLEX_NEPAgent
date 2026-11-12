@@ -1,0 +1,12 @@
+inherit: base.yaml
+# NEPAgent (submitted model): Direct sentence first. When its confidence is below the threshold: tool selection, the tool and
+# causal reasoning on the clip plus the new evidence; clip-only causal reasoning if that gives no answer; else Direct.
+gate_tau: 0.75
+store_all_candidates: false
+reasoning_variants: causal_sft_nc,tool_reason
+final_answer: tool_reason,causal_sft_nc
+reason_audio: none  # the reasoning calls get no audio text, as in the reasoning training prompts; Direct keeps it
+tool_menu: dense_resample,zoom,terminal_state  # the audio tool repeats text already in the Direct prompt
+lora_path: checkpoints/nep_agent_lora
+audio_tags: false  # audio enters as the Whisper speech transcript only; sound tags are not used
+zoom_mode: grounded  # zoom crops around the object Grounding DINO finds for the tool request's cue

@@ -1,0 +1,23 @@
+# Python 3.11, CUDA 12.8 (Linux x86_64)
+torch==2.8.0
+torchvision==0.23.0
+transformers==4.57.1
+vllm==0.11.0
+qwen-vl-utils==0.0.14
+openai-whisper==20250625
+panns-inference==0.1.1
+torchlibrosa==0.1.0
+librosa==0.11.0
+soundfile==0.14.0
+numpy==2.2.6
+scipy==1.17.1
+opencv-python-headless==5.0.0.93
+pillow==13.0.0
+matplotlib==3.11.2
+pyyaml==6.0.3
+python-dotenv==1.2.4
+tqdm==4.70.1
+pytest==9.2.0
+pytest-cov==7.0.0
+decord==0.6.0
+imageio-ffmpeg==0.8.1

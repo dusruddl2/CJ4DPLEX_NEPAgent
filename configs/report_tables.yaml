@@ -1,0 +1,19 @@
+# Row spec for scripts/main_table.py and scripts/subtype_table.py (test split; FutureOmni is reported on its Speech items:
+# pass --audio-types Speech).
+# kind: run (the stored prediction of a run) | tool (a policy applied to a run that stored every candidate; see scripts/subtype_table.py).
+blocks:
+  - title: "표 1. 순수 Qwen 대비 NEPAgent"
+    key: main
+    rows:
+      - {name: "순수 Qwen (Baseline)", kind: run, config: plain_qwen, reference: true}
+      - {name: "NEPAgent: 초기 예측 우선, 확신도가 임계값(τ = 0.75) 미만이면 도구 + 인과 추론", kind: run, config: nep_agent}
+
+  - title: "정책 비교 (같은 실행, 모든 후보 저장)"
+    key: policy
+    note: "최종 설정으로 모든 후보를 저장한 test 실행에서 정책만 바꾼 결과다."
+    rows:
+      - {name: "순수 Qwen (Baseline)", kind: run, config: plain_qwen, reference: true}
+      - {name: "초기 예측만", kind: tool, run: nep_agent_all_candidates, policy: direct}
+      - {name: "인과 추론 항상 (도구 없음)", kind: tool, run: nep_agent_all_candidates, policy: reason}
+      - {name: "도구 + 인과 추론 항상", kind: tool, run: nep_agent_all_candidates, policy: tool}
+      - {name: "초기 예측 우선, 임계값(τ = 0.75) = NEPAgent", kind: tool, run: nep_agent_all_candidates, policy: "gate@0.75"}

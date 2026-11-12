@@ -1,0 +1,51 @@
+{
+ "sample_id": "fo_0002",
+ "run": "final test run",
+ "initial_prediction": {
+  "sentence": "The man, now visibly distressed and tearful, begins to sing the nursery rhyme in a shaky, off-key voice, his performance quickly devolving into a loud, chaotic, and increasingly unhinged rendition that causes the other men to laugh and jeer at him.",
+  "matched_option": "E",
+  "confidence": 0.663
+ },
+ "gate": "confidence < 0.75: tool and causal reasoning",
+ "tool": {
+  "name": "terminal_state",
+  "name_ko": "마지막 상태 재확인",
+  "range": [
+   "#25",
+   "#32"
+  ],
+  "cue": "the officer and the group of men in the classroom",
+  "status": "executed",
+  "new_evidence": [
+   "#31.1",
+   "#31.2"
+  ]
+ },
+ "causal_reasoning_after_tool": {
+  "terminal_state": "A man with long hair and a beard is smiling and looking at the officer, who is holding a stick and a newspaper, while other men stand around them in a classroom.",
+  "ongoing_action": null,
+  "supporting_evidence": [
+   "#31"
+  ],
+  "intermediate_states": [
+   "The officer, holding the stick, turns to face the man with the long beard and gestures for him to sing.",
+   "The man with the long beard begins to sing the nursery rhyme, his expression shifting from amusement to a more serious, focused look.",
+   "The officer listens intently, his expression remaining stern but attentive."
+  ],
+  "causal_transition": "The officer's command to sing triggers the man's performance, which in turn shifts the group's attention and the room's atmosphere from chaotic to focused on the singing.",
+  "predicted_event": "The officer, holding a stick and a newspaper, turns to face the man with the long beard and gestures for him to sing. The man begins to sing the nursery rhyme, his expression shifting from amusement to a more serious, focused look. The officer listens intently, his expression remaining stern but attentive. The group's attention shifts from the chaos to the singing, creating a moment of focused attention in the room."
+ },
+ "final_answer": {
+  "source": "tool_reasoning",
+  "sentence": "The officer, holding a stick and a newspaper, turns to face the man with the long beard and gestures for him to sing. The man begins to sing the nursery rhyme, his expression shifting from amusement to a more serious, focused look. The officer listens intently, his expression remaining stern but attentive. The group's attention shifts from the chaos to the singing, creating a moment of focused attention in the room.",
+  "matched_option": "B",
+  "option_text": "The man successfully completes the song and is praised by the officer",
+  "correct": false
+ },
+ "plain_qwen": {
+  "sentence": "The man, visibly distressed and overwhelmed, begins to sing the nursery rhyme in a shaky, off-key voice as the officer watches him with a mix of amusement and exasperation.",
+  "matched_option": "A",
+  "correct": false
+ },
+ "note_ko": "초기 예측은 정답(E). 끝 구간 프레임이 더해지자 추론이 끝 장면(노래 시작)에만 집중해 앞의 대치 상황을 놓치고 '노래를 듣는다'로 예측 → 오답(B)."
+}

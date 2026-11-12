@@ -1,0 +1,21 @@
+# Training environment (.venv_train, Python 3.11) for src/train/run_sft.sh and src/train/merge_adapter.py.
+# Kept apart from requirements.txt because LLaMA-Factory pins its own dependency ranges.
+torch==2.8.0
+torchvision==0.23.0
+torchaudio==2.8.0
+transformers==4.57.1
+tokenizers==0.22.2
+peft==0.18.1
+accelerate==1.11.0
+datasets==4.0.0
+trl==0.24.0
+safetensors==0.8.0
+sentencepiece==0.2.3
+av==16.0.0
+pillow==11.3.0
+numpy==2.4.6
+pyyaml==6.0.3
+qwen-vl-utils==0.0.14
+# LLaMA-Factory 0.9.5.dev0, installed from source (this development version is not on PyPI; it provides the
+# qwen3_vl_nothink template the training configs use).
+llamafactory @ git+https://github.com/hiyouga/LLaMA-Factory.git

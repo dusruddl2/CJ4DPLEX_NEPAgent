@@ -1,0 +1,11 @@
+# Shared settings of every run: 32 frames with frame-number visual prompts, audio transcript text, option-free question.
+method: nep_agent
+num_frames: 32
+input_mode: images
+use_vp: true
+use_audio: true
+question_mode: conditioned
+use_reflector: true
+gate_tau: 1.01  # the Direct sentence confidence is recorded for every item; thresholds are applied offline
+uncertain_tau: 0.5
+lora_path: ""

@@ -1,0 +1,40 @@
+{
+ "sample_id": "fo_0695",
+ "benchmark": "FutureOmni (Speech)",
+ "type": "Causal",
+ "task": null,
+ "observed_seconds": 147.0,
+ "question_given_to_model": "Given the premise event: 'A Minion in the back seat of a car finds a bazooka and aims it', what event is its most direct conclusion? Describe that event in one sentence.",
+ "question_ko": "전제 '차 뒷좌석의 미니언이 바주카포를 찾아 겨눈다'의 가장 직접적인 결과는?",
+ "benchmark_question": "Given the premise event: 'A Minion in the back seat of a car finds a bazooka and aims it', which event is its most direct conclusion?",
+ "options_used_only_for_scoring": [
+  {
+   "option": "A",
+   "text": "The Minion hands the bazooka to the boy in the back seat.",
+   "text_ko": "미니언이 뒷좌석의 소년에게 바주카포를 건넴"
+  },
+  {
+   "option": "B",
+   "text": "The Minion fires the bazooka, causing the car to swerve.",
+   "text_ko": "미니언이 바주카포를 쏘아 차가 휘청거림"
+  },
+  {
+   "option": "C",
+   "text": "The father takes the bazooka away from the Minion for safety.",
+   "text_ko": "아버지가 안전을 위해 바주카포를 빼앗음"
+  },
+  {
+   "option": "D",
+   "text": "The police cars immediately pull over and surrender.",
+   "text_ko": "경찰차들이 곧바로 차를 세우고 항복함"
+  },
+  {
+   "option": "E",
+   "text": "The Minion uses the bazooka as a pillow and falls asleep.",
+   "text_ko": "미니언이 바주카포를 베개 삼아 잠듦"
+  }
+ ],
+ "correct_option": "B",
+ "published_annotation": null,
+ "future_video": null
+}

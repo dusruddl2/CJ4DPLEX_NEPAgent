@@ -1,0 +1,13 @@
+$preamble
+The clip stops before the event asked about happens, so that event cannot be seen. Reason about what happens next in one pass, then predict it.
+
+$audio
+
+$question_block
+
+$task
+
+Return JSON only, with your own values:
+$schema
+
+Rules: cite only frame ids shown in the images; every observed event must cite its first and last frame; an event that the question mentions as coming later is NOT an observation and must not be listed; anything after the last frame is a hypothesis, never an observed event; "predicted_event" is one sentence about what happens after the clip; do not give numeric probabilities.
