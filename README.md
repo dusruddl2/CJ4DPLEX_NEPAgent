@@ -218,10 +218,11 @@ test 정확도(%)입니다. FutureOmni는 말소리(Speech) 문항을 집계했�
 
 ### 데모
 
-`demo/`에 대표 입력 하나의 실행 과정을 단계별로 정리했습니다(`demo/demo.md`). 같은 영상으로 직접 실행해 볼 수 있습니다.
+`demo/app.py`는 영상을 올리면 Agent를 실행하고 단계별 출력(초기 예측, 확신도, 고른 도구, 추가된 프레임, 인과 추론, 최종 예측)을 화면에 보여 주는 웹 데모입니다. 대표 입력(`demo/video.mp4`)의 실행 결과와 사용법은 `demo/demo.md`에 있습니다.
 
 ```bash
-PYTHONPATH=. python scripts/run_agent.py --video demo/video.mp4
+pip install gradio
+PYTHONPATH=. python demo/app.py   # http://localhost:7860
 ```
 
 ## 8. 학습 재현 (선택)
