@@ -84,7 +84,7 @@ def predict(video: str | None, t_split: float, question: str, options_text: str,
     path = write_result(result, OUTPUT_DIR)
     figure = path.with_suffix(".png")
     draw_timeline(result, figure)
-    gallery = [(frame["path"], f"{frame['frame_id']} · {frame['t_sec']:.1f}s" + ("" if frame["source"] == "uniform" else " · 도구"))
+    gallery = [(str(Path(frame["path"]).resolve()), f"{frame['frame_id']} · {frame['t_sec']:.1f}s" + ("" if frame["source"] == "uniform" else " · 도구"))
                for frame in result["frames"]]
     return steps_markdown(result), gallery, str(figure), json.loads(path.read_text(encoding="utf-8"))
 
@@ -119,7 +119,8 @@ def main() -> None:
     cfg = load_config(CONFIG)
     audio = AudioAnalyzer() if cfg.use_audio else None
     SERVICES = build_services(VLLMQwen(resolve_model_path(DEFAULT_MODEL, cfg.lora_path)), "cache", audio)
-    build_ui().queue(max_size=8).launch(server_name="0.0.0.0", server_port=args.port, share=args.share)
+    build_ui().queue(max_size=8).launch(server_name="0.0.0.0", server_port=args.port, share=args.share, show_error=True,
+                                    allowed_paths=[str(Path("cache").resolve()), str(OUTPUT_DIR.resolve())])
 
 
 if __name__ == "__main__":
