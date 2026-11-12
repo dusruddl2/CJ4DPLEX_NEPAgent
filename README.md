@@ -425,7 +425,7 @@ NEPAgent(`configs/nep_agent.yaml`)와 순수 Qwen3-VL-8B(`configs/plain_qwen.yam
 | `tests/` | 단위 테스트(Mock VLM 사용, GPU 불필요) |
 | `docs/` | 제출 문서: `Executive_Summary.md`(핵심 요약), `Technical_Report.md`(상세 보고서), `System_Architecture.md`(구조와 단계별 입출력), `Usage_and_Implementation.md`(사용한 모델·데이터·OSS·AI 도구와 직접 구현 범위), `figures/`(그림) |
 | `requirements.txt`, `requirements-train.txt` | 추론 환경 의존성, 학습·병합 환경(`.venv_train`) 의존성 |
-| `pytest.ini`, `.gitignore` | pytest 설정, 저장소에서 제외하는 경로(`checkpoints/`, `cache/`, `data/`, `logs/`, `.env`) |
+| `.gitignore` | 저장소에서 제외하는 경로(`checkpoints/`, `cache/`, `data/`, `logs/`, `.env`) |
 | `results/` | 테스트 케이스(`results/qualitative/`), 실패 사례(`results/failure_cases/`) (6절). 벤치마크를 실행하면 결과가 `results/quantitative/`에 생긴다 |
 
 실행 중에 생기는 폴더: `data/`(다운로드, 질문·정답 파일, `prefix.mp4`), `cache/`(프레임·오디오 캐시, 학습 데이터), `checkpoints/`(어댑터와 병합 모델), `logs/`.
