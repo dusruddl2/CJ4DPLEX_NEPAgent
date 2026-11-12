@@ -2,7 +2,7 @@
 
 직접 학습한 가중치는 저장소에 넣지 않았습니다(과제 안내 2.4절). 아래 Google Drive 폴더에서 받아 이 폴더에 풀어 주세요.
 
-**다운로드**: https://drive.google.com/drive/folders/1GoackN2mI0RrBRY4ba3xzBhlcIUMVR1i?usp=sharing
+**다운로드**: https://drive.google.com/drive/folders/1BcRcXynS1XmF1liJ4kfvA8m83f1Vanw4
 
 | 파일 | 내용 | 압축 해제 위치 |
 |---|---|---|

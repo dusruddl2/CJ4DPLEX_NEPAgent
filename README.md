@@ -60,7 +60,7 @@ hf download Qwen/Qwen3-VL-8B-Instruct --local-dir models/Qwen3-VL-8B-Instruct
 export VLM_PATH=$PWD/models/Qwen3-VL-8B-Instruct
 ```
 
-**NEPAgent 가중치**: https://drive.google.com/drive/folders/1GoackN2mI0RrBRY4ba3xzBhlcIUMVR1i?usp=sharing
+**NEPAgent 가중치**: https://drive.google.com/drive/folders/1BcRcXynS1XmF1liJ4kfvA8m83f1Vanw4
 
 | 파일 | 압축 해제 위치 |
 |---|---|
@@ -216,6 +216,14 @@ test 정확도(%)입니다. FutureOmni는 말소리(Speech) 문항을 집계했�
 
 케이스마다 관찰 영상, 질문과 보기, NEPAgent 출력 요약, 보고서 그림이 들어 있습니다.
 
+### 데모
+
+`demo/`에 대표 입력 하나의 실행 과정을 단계별로 정리했습니다(`demo/demo.md`). 같은 영상으로 직접 실행해 볼 수 있습니다.
+
+```bash
+PYTHONPATH=. python scripts/run_agent.py --video demo/video.mp4
+```
+
 ## 8. 학습 재현 (선택)
 
 학습과 어댑터 병합은 별도 가상환경을 씁니다.
@@ -280,6 +288,7 @@ PYTHONPATH=. python -m pytest -q
 | `tests/` | 단위 테스트 |
 | `docs/` | 제출 문서와 그림 |
 | `results/` | 테스트 케이스와 실패 사례 |
+| `demo/` | 대표 입력의 실행 과정과 결과 |
 | `checkpoints/` | 가중치 위치(가중치는 저장소에 포함하지 않음) |
 
 실행 중에 `data/`, `cache/`, `logs/` 폴더가 생깁니다.
