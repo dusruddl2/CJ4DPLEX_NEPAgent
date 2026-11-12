@@ -42,10 +42,5 @@
   "option_text": "The baby reaches for the armrest and begins climbing up, then stands leveraging the armrest and starts climbing over it.",
   "correct": true
  },
- "plain_qwen": {
-  "sentence": "The baby crawls across the couch towards the right side, reaching for and grabbing a blue sock.",
-  "matched_option": "D",
-  "correct": true
- },
  "note_ko": "초기 예측은 '누워서 쉰다'. 끝 구간을 다시 보고 아기가 앉아 있는 것을 확인한 뒤 '가장자리로 기어가 넘어간다'로 바뀌어 실제 다음 장면(팔걸이를 기어오름)에 가까워짐."
 }

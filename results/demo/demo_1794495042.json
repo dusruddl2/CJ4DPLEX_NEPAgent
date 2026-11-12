@@ -1,0 +1,423 @@
+{
+ "sample_id": "demo_1794495042",
+ "status": "ok",
+ "analysis": {
+  "event_chain": [],
+  "motion_summary": null
+ },
+ "prediction": {
+  "answer": null,
+  "option_probs": {},
+  "top_k": [],
+  "confidence": null,
+  "next_event": "The baby then sits up, looks around, and begins to crawl towards the edge of the couch. The baby reaches the edge and starts to climb down, eventually standing on the floor. The baby then walks around the room, exploring the space. The video concludes with the baby standing near a window, looking out, and then turning to face the camera, appearing curious and engaged with the surroundings.",
+  "uncertain": null
+ },
+ "trace": {
+  "reflector_rounds": 1,
+  "vlm_calls": 4,
+  "latency_sec": 54.616,
+  "frames_used": 34,
+  "extra_frames": 2,
+  "invalid_citations": 0,
+  "reflector_checks": [],
+  "evidence_gaps": [],
+  "choice_history": [],
+  "flags": [],
+  "evidence_reviews": [],
+  "tool": {
+   "direct_prediction": {
+    "choice": null,
+    "option_probs": {},
+    "confidence": null,
+    "evidence": {},
+    "next_event": "The video ends with the baby sitting on the couch, and the next event is the baby lying down on the couch, appearing to be asleep or resting.",
+    "evidence_sufficient": true,
+    "matcher_confidence": null
+   },
+   "routed": true,
+   "plan": {
+    "sufficient": false,
+    "resolvable": true,
+    "gap_scope": "observed",
+    "missing": "the baby's final position and state on the couch",
+    "where": [
+     "#31",
+     "#32"
+    ],
+    "tool": "terminal_state",
+    "region": "center"
+   },
+   "new_evidence_ids": [
+    "#30.1",
+    "#31.1"
+   ],
+   "revision_accepted": true,
+   "decision_reason": "causal_sft_nc_selected"
+  },
+  "open": {
+   "question_mode": "conditioned",
+   "question_text": "What happens next, right after the clip ends?",
+   "question_note": {
+    "text": "What happens next, right after the clip ends?",
+    "observer_text": "What happens next, right after the clip ends?",
+    "mode": "conditioned",
+    "rules": [],
+    "slots": 0
+   },
+   "tool_executed": true,
+   "new_evidence_ids": [
+    "#30.1",
+    "#31.1"
+   ],
+   "final": null,
+   "predicted_event": "The baby then sits up, looks around, and begins to crawl towards the edge of the couch. The baby reaches the edge and starts to climb down, eventually standing on the floor. The baby then walks around the room, exploring the space. The video concludes with the baby standing near a window, looking out, and then turning to face the camera, appearing curious and engaged with the surroundings.",
+   "frozen_sha": "86d7692eb3f3de4d",
+   "generation_logprob": -0.29568791945348494,
+   "matched": {},
+   "confidence_source": "mc_matcher"
+  },
+  "direct": {
+   "direct_prediction": {
+    "event": "The video ends with the baby sitting on the couch, and the next event is the baby lying down on the couch, appearing to be asleep or resting.",
+    "frozen_sha": "5a7488a0f8968130",
+    "choice": null,
+    "option_probs": {},
+    "transition": "",
+    "supporting_evidence": [],
+    "json_ok": false,
+    "raw_reply": ""
+   },
+   "routing": {
+    "signal": "direct_sentence_mean_token_logprob",
+    "mean_logprob": -0.29568791945348494,
+    "generation_confidence": 0.7440195858312912,
+    "gate_tau": 0.75,
+    "routed": true
+   },
+   "tool_selection": {
+    "tool": "terminal_state",
+    "where": [
+     "#31",
+     "#32"
+    ],
+    "cue": "the baby's final position and state on the couch",
+    "observable_gap": true,
+    "target_interval": [
+     72.54166666666667,
+     74.95833333333333
+    ],
+    "reason": "The prediction states the video ends with the baby lying down on the couch, appearing to be asleep or resting. However, the final frames (#31 and #32) show the baby sitting up, leaning back against the cushions, and looking around, not lying down. A re-examination of the terminal state is needed to confirm the baby's final action and posture, which directly contradicts the prediction.",
+    "expected_evidence": "The baby is sitting upright, leaning back against the couch cushions, with arms raised or resting on the back, and is awake and alert, not lying down or asleep.",
+    "clamped_from": null
+   },
+   "tool_observation": {
+    "tool": "terminal_state",
+    "where": [
+     "#31",
+     "#32"
+    ],
+    "status": "executed",
+    "new_evidence_ids": [
+     "#30.1",
+     "#31.1"
+    ]
+   },
+   "stage_calls": {
+    "direct_video": 1,
+    "direct_match": 0,
+    "select": 1,
+    "tool_reason": 1,
+    "causal_sft_nc": 1
+   }
+  },
+  "nep_agent": {
+   "variants": "causal_sft_nc,tool_reason",
+   "final_source": "causal_sft_nc",
+   "reasoning": {
+    "tool_reason": {
+     "record": null,
+     "candidate": null,
+     "raw_reply": "{\"observed\": {\"terminal_state\": \"The baby is sitting on the couch, leaning back against the cushions with one arm raised and the other holding a blue sock, looking forward.\", \"ongoing_action\": null, \"supporting_evidence\": [\"#32\"]}, \"inferred\": {\"intermediate_states\": [\"The baby remains seated on the couch, holding the blue sock and looking around.\", \"The baby shifts its position slightly, perhaps adjusting its grip on the sock or looking at something off-camera.\", \"The baby begins to move its legs and arms, preparing to stand up or crawl again.\"], \"causal_transition\": \"The baby, having settled into a resting position, becomes restless and starts to shift its weight, initiating movement to explore further.\", \"predicted_event\": \"The baby, now sitting on the couch, holds a blue sock in its hands and looks around. The baby then shifts its position, moving its legs and arms, and begins to crawl towards the right side of the couch. The baby continues to crawl, moving towards the edge of the couch, and eventually reaches the end, where it sits down and looks around. The baby then leans back against the couch cushions, appearing to rest or observe its surroundings. The baby remains seated on the couch, holding the blue sock in one hand and looking around. The baby then shifts its position slightly, moving its legs and arms, and begins to crawl towards the right side of the couch. The baby continues to crawl, moving towards the edge of the couch, and eventually reaches the end, where it sits down and looks around. The baby then leans back against the couch cushions, appearing to rest or observe its surroundings. The baby remains seated on the couch, holding the blue sock in one hand and looking around. The baby then shifts its position slightly, moving its legs and arms, and begins to crawl towards the right side of the couch. The baby continues to crawl, moving towards the edge of the couch, and eventually reaches the end, where it sits down and looks around. The baby then leans back against the couch cushions, appearing to rest or observe its surroundings. The baby remains seated on the couch, holding the blue sock in one hand and looking around. The baby then shifts its position slightly, moving its legs and arms, and begins to crawl towards the right side of the couch. The baby continues to crawl, moving towards the edge of the couch, and eventually reaches the end, where it sits down and looks around. The baby then leans back against the couch cushions, appearing to rest or observe its surroundings. The baby remains seated on the couch, holding the blue sock in one hand and looking around. The baby then shifts its position slightly, moving its legs and arms, and begins to crawl towards the right side of the couch. The baby continues to crawl, moving towards the edge of the couch, and eventually reaches the end, where it sits down and looks around. The baby then leans back against the couch cushions, appearing to rest or observe its surroundings. The baby remains seated on the couch, holding the blue sock in one hand and looking around. The baby then shifts its position slightly, moving its legs and arms, and begins to crawl towards the right side of the couch. The baby continues to crawl, moving towards the edge of the couch, and eventually reaches the end, where it sits down and looks around. The baby then leans back against the couch cushions, appearing to rest or observe its surroundings. The baby remains seated on the couch, holding the blue sock in one hand and looking around. The baby then shifts its position slightly, moving its legs and arms, and begins to crawl towards the right side of the couch. The baby continues to crawl, moving towards the edge of the couch, and eventually reaches the end, where it sits down and looks around. The baby then leans back against the couch cushions, appearing to rest or observe its surroundings. The baby remains seated on the couch, holding the blue sock in one hand and looking around. The baby then shifts its position slightly, moving its legs and arms, and begins to crawl towards the right side of the couch. The baby continues to crawl, moving towards the edge of the couch, and eventually reaches the end, where it sits down and looks around. The baby then leans back against the couch cushions, appearing to rest or observe its surroundings. The baby remains seated on the couch, holding the blue sock in one hand and looking around. The baby then shifts its position slightly, moving its legs and arms, and begins to crawl towards the right side of the couch. The baby continues to crawl, moving towards the edge of the couch, and eventually reaches the end, where it sits down and looks around. The baby then leans back against the couch cushions, appearing to rest or observe its surroundings. The baby remains seated on the couch, holding the blue sock in one hand and looking around. The baby then shifts its position slightly, moving its legs and arms, and begins to crawl towards the right side of the couch. The baby continues to crawl, moving towards the edge of the couch, and eventually reaches the end, where it sits down and looks around. The baby then leans back against the couch cushions, appearing to rest or observe its surroundings. The baby remains seated on the couch, holding the blue sock in one hand and looking around. The baby then shifts its position slightly, moving its legs and arms, and begins to crawl towards the right side of the couch. The baby continues to crawl, moving towards the edge of the couch, and eventually reaches the end, where it sits down and looks around. The baby then leans back against the couch cushions, appearing to rest or observe its surroundings. The baby remains seated on the couch, holding the blue sock in one hand and looking around. The baby then shifts its position slightly, moving its legs and arms, and begins to crawl towards the right side of the couch. The baby continues to crawl, moving towards the edge of the couch, and eventually reaches the end, where it sits down and looks around. The baby then leans back against the couch cushions, appearing to rest or observe its surroundings. The baby remains seated on the couch, holding the blue sock in one hand and looking around. The baby then shifts its position slightly, moving its legs and arms, and begins to crawl towards the right side of the couch. The baby continues to crawl, moving towards the edge of the couch, and eventually reaches the end, where it sits down and looks around. The baby then leans back against the couch cushions, appearing to rest or observe its surroundings. The baby remains seated on the couch, holding the blue sock in one hand and looking around. The baby then shifts its position slightly, moving its legs and arms, and begins to crawl towards the right side of the couch. The baby continues to crawl, moving towards the edge of the couch, and eventually reaches the end, where it sits down and looks around. The baby then leans back against the couch cushions, appearing to rest or observe its surroundings. The baby remains seated on the couch, holding the blue sock in one hand and looking around. The baby then shifts its position slightly, moving its legs and arms, and begins to crawl towards the right side of the couch. The baby continues to crawl, moving towards the edge of the couch, and eventually reaches the end, where it sits down and looks around. The baby then leans back against the couch cushions, appearing to rest or observe its surroundings. The baby remains seated on the couch, holding the blue",
+     "selection": {
+      "tool": "terminal_state",
+      "where": [
+       "#31",
+       "#32"
+      ],
+      "cue": "the baby's final position and state on the couch",
+      "observable_gap": true,
+      "target_interval": [
+       72.54166666666667,
+       74.95833333333333
+      ],
+      "reason": "The prediction states the video ends with the baby lying down on the couch, appearing to be asleep or resting. However, the final frames (#31 and #32) show the baby sitting up, leaning back against the cushions, and looking around, not lying down. A re-examination of the terminal state is needed to confirm the baby's final action and posture, which directly contradicts the prediction.",
+      "expected_evidence": "The baby is sitting upright, leaning back against the couch cushions, with arms raised or resting on the back, and is awake and alert, not lying down or asleep.",
+      "clamped_from": null
+     },
+     "observation": {
+      "tool": "terminal_state",
+      "where": [
+       "#31",
+       "#32"
+      ],
+      "status": "executed",
+      "new_evidence_ids": [
+       "#30.1",
+       "#31.1"
+      ]
+     },
+     "variant": "causal_sft_nc"
+    },
+    "causal_sft_nc": {
+     "record": {
+      "observed_events": [],
+      "terminal_state": "The baby is sitting on the couch, leaning back against the cushions with its legs spread and arms raised, holding a blue sock.",
+      "ongoing_action": null,
+      "causal_transition": "The baby, having rested and explored the couch, shifts its focus to the edge and begins to move towards the floor.",
+      "predicted_event": "The baby then sits up, looks around, and begins to crawl towards the edge of the couch. The baby reaches the edge and starts to climb down, eventually standing on the floor. The baby then walks around the room, exploring the space. The video concludes with the baby standing near a window, looking out, and then turning to face the camera, appearing curious and engaged with the surroundings.",
+      "supporting_evidence": [
+       "#32"
+      ],
+      "missing_evidence": null,
+      "intermediate_states": [
+       "The baby sits up, looking around the room.",
+       "The baby begins to crawl towards the edge of the couch.",
+       "The baby reaches the edge and starts to climb down."
+      ]
+     },
+     "candidate": {
+      "event": "The baby then sits up, looks around, and begins to crawl towards the edge of the couch. The baby reaches the edge and starts to climb down, eventually standing on the floor. The baby then walks around the room, exploring the space. The video concludes with the baby standing near a window, looking out, and then turning to face the camera, appearing curious and engaged with the surroundings.",
+      "frozen_sha": "86d7692eb3f3de4d",
+      "choice": null,
+      "option_probs": {},
+      "transition": "",
+      "supporting_evidence": [
+       "#32"
+      ],
+      "json_ok": true,
+      "raw_reply": ""
+     },
+     "raw_reply": ""
+    }
+   },
+   "frames_in_prompt": 34,
+   "extra_evidence": 0,
+   "elapsed_sec": 54.616,
+   "stage_calls": {
+    "direct_video": 1,
+    "direct_match": 0,
+    "select": 1,
+    "tool_reason": 1,
+    "causal_sft_nc": 1
+   }
+  }
+ },
+ "frames": [
+  {
+   "frame_id": "#01",
+   "t_sec": 0.0,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/01_00000000.jpg"
+  },
+  {
+   "frame_id": "#02",
+   "t_sec": 2.417,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/02_00002417.jpg"
+  },
+  {
+   "frame_id": "#03",
+   "t_sec": 4.833,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/03_00004833.jpg"
+  },
+  {
+   "frame_id": "#04",
+   "t_sec": 7.25,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/04_00007250.jpg"
+  },
+  {
+   "frame_id": "#05",
+   "t_sec": 9.667,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/05_00009667.jpg"
+  },
+  {
+   "frame_id": "#06",
+   "t_sec": 12.083,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/06_00012083.jpg"
+  },
+  {
+   "frame_id": "#07",
+   "t_sec": 14.5,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/07_00014500.jpg"
+  },
+  {
+   "frame_id": "#08",
+   "t_sec": 16.917,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/08_00016917.jpg"
+  },
+  {
+   "frame_id": "#09",
+   "t_sec": 19.333,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/09_00019333.jpg"
+  },
+  {
+   "frame_id": "#10",
+   "t_sec": 21.75,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/10_00021750.jpg"
+  },
+  {
+   "frame_id": "#11",
+   "t_sec": 24.167,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/11_00024167.jpg"
+  },
+  {
+   "frame_id": "#12",
+   "t_sec": 26.583,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/12_00026583.jpg"
+  },
+  {
+   "frame_id": "#13",
+   "t_sec": 29.0,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/13_00029000.jpg"
+  },
+  {
+   "frame_id": "#14",
+   "t_sec": 31.417,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/14_00031417.jpg"
+  },
+  {
+   "frame_id": "#15",
+   "t_sec": 33.833,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/15_00033833.jpg"
+  },
+  {
+   "frame_id": "#16",
+   "t_sec": 36.25,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/16_00036250.jpg"
+  },
+  {
+   "frame_id": "#17",
+   "t_sec": 38.708,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/17_00038708.jpg"
+  },
+  {
+   "frame_id": "#18",
+   "t_sec": 41.125,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/18_00041125.jpg"
+  },
+  {
+   "frame_id": "#19",
+   "t_sec": 43.542,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/19_00043542.jpg"
+  },
+  {
+   "frame_id": "#20",
+   "t_sec": 45.958,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/20_00045958.jpg"
+  },
+  {
+   "frame_id": "#21",
+   "t_sec": 48.375,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/21_00048375.jpg"
+  },
+  {
+   "frame_id": "#22",
+   "t_sec": 50.792,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/22_00050792.jpg"
+  },
+  {
+   "frame_id": "#23",
+   "t_sec": 53.208,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/23_00053208.jpg"
+  },
+  {
+   "frame_id": "#24",
+   "t_sec": 55.625,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/24_00055625.jpg"
+  },
+  {
+   "frame_id": "#25",
+   "t_sec": 58.042,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/25_00058042.jpg"
+  },
+  {
+   "frame_id": "#26",
+   "t_sec": 60.458,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/26_00060458.jpg"
+  },
+  {
+   "frame_id": "#27",
+   "t_sec": 62.875,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/27_00062875.jpg"
+  },
+  {
+   "frame_id": "#28",
+   "t_sec": 65.292,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/28_00065292.jpg"
+  },
+  {
+   "frame_id": "#29",
+   "t_sec": 67.708,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/29_00067708.jpg"
+  },
+  {
+   "frame_id": "#30",
+   "t_sec": 70.125,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/30_00070125.jpg"
+  },
+  {
+   "frame_id": "#30.1",
+   "t_sec": 71.958,
+   "source": "terminal_state",
+   "path": "cache/demo_1794495042/vp/30_1_00071958.jpg"
+  },
+  {
+   "frame_id": "#31",
+   "t_sec": 72.542,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/31_00072542.jpg"
+  },
+  {
+   "frame_id": "#31.1",
+   "t_sec": 73.458,
+   "source": "terminal_state",
+   "path": "cache/demo_1794495042/vp/31_1_00073458.jpg"
+  },
+  {
+   "frame_id": "#32",
+   "t_sec": 74.958,
+   "source": "uniform",
+   "path": "cache/demo_1794495042/vp/32_00074958.jpg"
+  }
+ ],
+ "run_config": "configs/nep_agent.yaml"
+}

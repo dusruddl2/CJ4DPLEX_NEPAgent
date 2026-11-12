@@ -40,10 +40,11 @@ def steps_markdown(result: dict) -> str:
     direct, agent = trace.get("direct") or {}, trace.get("nep_agent") or {}
     routing = direct.get("routing") or {}
     source = agent.get("final_source", "direct")
-    entry = (agent.get("reasoning") or {}).get(source) or {}
+    reasoning = agent.get("reasoning") or {}
+    entry, tool_entry = reasoning.get(source) or {}, reasoning.get("tool_reason") or {}
     record = entry.get("record") or {}
-    selection = entry.get("selection") or direct.get("tool_selection") or {}
-    observation = entry.get("observation") or direct.get("tool_observation") or {}
+    selection = tool_entry.get("selection") or direct.get("tool_selection") or {}
+    observation = tool_entry.get("observation") or direct.get("tool_observation") or {}
     confidence, tau = routing.get("generation_confidence"), routing.get("gate_tau")
     lines = [f"### 1. 초기 예측\n{(direct.get('direct_prediction') or {}).get('event')}"]
     if confidence is not None:
@@ -55,7 +56,8 @@ def steps_markdown(result: dict) -> str:
         added = ", ".join(observation.get("new_evidence_ids") or []) or "없음"
         lines.append(f"### 4. 도구 실행\n추가된 프레임: {added}")
     if record:
-        lines.append("### 5. 인과 추론\n"
+        note = "" if source == "tool_reason" or not selection.get("tool") else "도구 뒤 추론이 형식에 맞는 답을 내지 못해, 원래 프레임만으로 한 번 더 추론한 결과입니다.\n"
+        lines.append("### 5. 인과 추론\n" + note +
                      f"- **관찰 · 마지막 상태**: {record.get('terminal_state')}\n"
                      f"- **관찰 · 진행 중 행동**: {record.get('ongoing_action')}\n"
                      f"- **근거 프레임**: {', '.join(record.get('supporting_evidence') or []) or '-'}\n"
