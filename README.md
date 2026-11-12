@@ -286,7 +286,7 @@ PYTHONPATH=. python -m pytest -q
 | `src/models/`, `src/data/`, `src/eval/` | 모델 인터페이스, 벤치마크 로더, 평가 지표 |
 | `src/train/` | 학습 데이터 생성, 학습 설정, 어댑터 병합 |
 | `tests/` | 단위 테스트 |
-| `docs/` | 제출 문서와 그림 |
+| `docs/` | 제출 문서(마크다운 원본과 같은 이름의 PDF)와 그림 |
 | `results/` | 테스트 케이스와 실패 사례 |
 | `demo/` | 대표 입력의 실행 과정과 결과 |
 | `checkpoints/` | 가중치 위치(가중치는 저장소에 포함하지 않음) |
