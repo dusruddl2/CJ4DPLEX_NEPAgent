@@ -4,7 +4,7 @@ Source: Wang et al., "Fostering Video Reasoning via Next-Event Prediction" [1], 
 Changed from source: charades and ego4d clips are excluded (non-commercial / signed-access
 licenses), options are shuffled per item with a fixed seed, and the split keeps the hop and
 data-source mix while separating videos. Question text may describe later scenes by design;
-see `leak_summary` and section 5 of README.md.
+see `leak_summary` and section 6 of README.md.
 """
 from __future__ import annotations
 

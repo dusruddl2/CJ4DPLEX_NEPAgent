@@ -27,7 +27,7 @@ cd checkpoints
 unzip nep_agent_lora.zip          # → checkpoints/nep_agent_lora/
 ```
 
-어댑터를 기반 모델에 병합해야 실행할 수 있습니다. 병합 명령은 저장소 루트 `README.md` 3.4절에 있습니다.
+어댑터를 기반 모델에 병합해야 실행할 수 있습니다. 병합 명령은 저장소 루트 `README.md` 4절에 있습니다.
 
 ## 확인
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Create data/splits/{sample_id}/prefix.mp4 for dev and test. Safe to re-run; see section 5 of README.md.
+"""Create data/splits/{sample_id}/prefix.mp4 for dev and test. Safe to re-run; see section 6 of README.md.
 
 --benchmark futureomni (default): extract clips, verify length against t_split, cut when needed.
 --benchmark futurebench: clips are already first segments, so they are linked and measured.
